@@ -1,0 +1,46 @@
+﻿<h1>Personas</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>fecha</th>
+            <th>Dni</th>
+            <th>Genero</th>
+            <th>Ciudad</th>
+            <th>Dirección</th>
+            <th>Correo Electronico</th>
+            <th>Username</th>
+            <th>Contraseña</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            var accounts = ((List<CuentaP>)ViewBag.CuentasP);
+        }
+        @for (var i = 0; i < accounts.Count; i++)
+        {
+            var item = accounts[i];
+        <tr>
+            <td>@item.Nombre </td>
+            <td>@item.Apellido</td>
+            <td>@item.Dia/@item.Mes/@item.Year</td>
+            <td>@item.Dni</td>
+            <td>@item.Genero</td>
+            <td>@item.Ciudad</td>
+            <td>@item.Direccion</td>
+            <td>@item.Correo</td>
+            <td>@item.UserName</td>
+            <td>@item.Password</td>
+
+
+            <!--<td><a href="/account/Edit?id=item.id">Editar</a></td><a href="/account/create">Crear Cuenta</a>-->
+        </tr>
+
+        }
+
+
+
+    </tbody>
+</table>
